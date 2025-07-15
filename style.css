@@ -268,3 +268,20 @@ html {
 .eir-results .badge {
   font-size: 0.95rem;
 }
+
+#calculator .card-custom {
+  min-height: 100%;
+}
+#calculator h3, #calculator h4, #calculator h5 {
+  letter-spacing: 0.3px;
+}
+#sliders label span:first-child {
+  text-transform: capitalize;
+}
+#individualRatings .d-flex {
+  background: #f9f9f9;
+  margin-bottom: 0.5rem;
+}
+#improvements .improve-box {
+  font-size: 0.9rem;
+}
