@@ -1,214 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Environmental Impact Rating</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Environmental Impact Rating</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- AOS for scroll animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet"/>
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
-  <!-- Your custom -->
-  <link href="style.css" rel="stylesheet"/>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS for scroll animations -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Your custom -->
+    <link href="style.css" rel="stylesheet" />
 
-  <style>
-    /* Parallax Hero */
-    .hero-section {
-      position: relative;
-      background: url('assets/header-bg4.jpg') center/cover fixed;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-    }
-    .hero-section::before {
-      content:'';
-      position:absolute; inset:0;
-      background:rgba(0,0,0,0.4);
-    }
-    .hero-content {
-      position:relative; z-index:1;
-    }
-    /* Smooth scroll */
-    html { scroll-behavior: smooth; }
-    /* Section headings */
-    .section-heading {
-      font-family:'Rubik',sans-serif;
-      font-weight:600;
-      color:#1e2a38;
-      margin-bottom:1.5rem;
-      text-align:center;
-    }
-    /* Cards */
-    .card-custom {
-      border:none;
-      border-radius:.75rem;
-      box-shadow:0 4px 20px rgba(0,0,0,0.05);
-      transition:transform .3s ease,box-shadow .3s ease;
-    }
-    .card-custom:hover {
-      transform:translateY(-8px);
-      box-shadow:0 12px 30px rgba(0,0,0,0.1);
-    }
-    /* Buttons */
-    .btn-press {
-      transition:transform .1s ease;
-    }
-    .btn-press:active {
-      transform:scale(0.95);
-    }
-    /* Photo grid for workshops promo */
-    .edu-workshops-section { height:80vh; position:relative; overflow:hidden; }
-    .bg-photos-grid { z-index:1; }
-    .edu-workshops-section .overlay { z-index:2; }
-    .promo-card { z-index:3; border-radius:1rem; }
-  </style>
-</head>
+    <style>
+      /* Parallax Hero */
+      .hero-section {
+        position: relative;
+        background: url("assets/header-bg4.jpg") center/cover fixed;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+      }
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      /* Smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Section headings */
+      .section-heading {
+        font-family: "Rubik", sans-serif;
+        font-weight: 600;
+        color: #1e2a38;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      /* Cards */
+      .card-custom {
+        border: none;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-custom:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      }
+      /* Buttons */
+      .btn-press {
+        transition: transform 0.1s ease;
+      }
+      .btn-press:active {
+        transform: scale(0.95);
+      }
+      /* Photo grid for workshops promo */
+      .edu-workshops-section {
+        height: 80vh;
+        position: relative;
+        overflow: hidden;
+      }
+      .bg-photos-grid {
+        z-index: 1;
+      }
+      .edu-workshops-section .overlay {
+        z-index: 2;
+      }
+      .promo-card {
+        z-index: 3;
+        border-radius: 1rem;
+      }
+    </style>
+  </head>
 
-<body class="bg-light">
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="index.html">EIR</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="calculator.html">Calculator</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="education.html">Education & workshops</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero-section" id="home">
-    <div class="hero-content" data-aos="zoom-in">
-      <h1 class="display-3 fw-bold">Environmental Impact Rating</h1>
-      <p class="lead mb-4">Helping consumers make sustainable packaging choices</p>
-      <a href="#about" class="btn btn-light btn-lg btn-press">Learn More</a>
-    </div>
-  </header>
-
-  <!-- ABOUT -->
-  <section id="about" class="py-5 bg-light" data-aos="fade-up">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6" data-aos="fade-right">
-          <img src="assets/image2.png" class="img-fluid rounded shadow" alt="EIR Basket"/>
-        </div>
-        <div class="col-md-6" data-aos="fade-left">
-          <h2 class="fw-bold">What is the Environmental Impact Rating?</h2>
-          <p>The EIR is a quick way to understand the environmental footprint of a product’s packaging—from recyclability to landfill contribution.</p>
-          <p>Scores run <strong>1–5 stars</strong> based on material type, ease of separation, compostability and more.</p>
-          <p>Compare like-for-like packaging—e.g. bottled drinks vs. cereal boxes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RATING GUIDELINES -->
-  <section id="guidelines" class="py-5" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-heading" data-aos="fade-up">Rating Guidelines</h2>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="flip-left">
-          <div class="card card-custom h-100 p-4 text-center">
-            <h3>5/5</h3>
-            <p class="fs-2 text-success">★★★★★</p>
-            <p>Highly sustainable: recyclable, compostable mono-materials</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="flip-up">
-          <div class="card card-custom h-100 p-4 text-center">
-            <h3>3/5</h3>
-            <p class="fs-2 text-warning">★★★☆☆</p>
-            <p>Moderate impact: mixed materials or limited recyclability</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="flip-right">
-          <div class="card card-custom h-100 p-4 text-center">
-            <h3>2/5</h3>
-            <p class="fs-2 text-danger">★★☆☆☆</p>
-            <p>Low sustainability: non-recyclable or complex packaging</p>
-          </div>
+  <body class="bg-light">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="index.html">EIR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="calculator.html"
+                >Calculator</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="education.html"
+                >Education & workshops</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- SERVICES -->
-  <section id="services" class="py-5 bg-light" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-heading">Services</h2>
-      <p class="text-center mb-4"><strong>EIR = <span class="text-success">Visibility</span> + <span class="text-warning">Pressure</span> + <span class="text-info">Progress</span></strong></p>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-right">
-          <div class="card card-custom h-100 p-4">
-            <h5 class="fw-bold mb-3">Service Agreement</h5>
-            <p>Form agreements with councils & businesses, collect & process soft plastics, and deliver certified reports.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="card card-custom h-100 p-4">
-            <h5 class="fw-bold mb-3">Waste Diversion Guarantee</h5>
-            <p>100% of collected plastic avoids landfill—converted into biochar, bio-oil or syngas for reuse.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-left">
-          <div class="card card-custom h-100 p-4">
-            <h5 class="fw-bold mb-3">Sustainability Reporting</h5>
-            <p>Provide ESG metrics, CO₂e emissions data, and recovery certificates for investor & public reporting.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION & WORKSHOPS PROMO -->
-  <section id="workshops" class="edu-workshops-section" data-aos="fade-up">
-    <div class="bg-photos-grid position-absolute top-0 start-0 w-100 h-100">
-      <div class="row g-0 h-100">
-        <div class="col-6" style="background:url('assets/edu1.jpg') center/cover"></div>
-        <div class="col-6" style="background:url('assets/edu2.jpg') center/cover"></div>
-        <div class="col-6" style="background:url('assets/edu3.jpg') center/cover"></div>
-        <div class="col-6" style="background:url('assets/edu4.jpg') center/cover"></div>
-      </div>
-    </div>
-    <div class="overlay position-absolute inset-0 bg-dark opacity-50"></div>
-    <div class="container position-relative h-100 d-flex align-items-center justify-content-center">
-      <div class="promo-card bg-white rounded shadow-lg text-center p-5" style="max-width:800px;">
-        <h2 class="fw-bold mb-3">Education Program</h2>
-        <p class="text-secondary mb-4">
-          45–60 min interactive workshops: rate plastic, learn EIR, and prototype circular packaging.
+    <!-- HERO -->
+    <header class="hero-section" id="home">
+      <div class="hero-content" data-aos="zoom-in">
+        <h1 class="display-3 fw-bold">Environmental Impact Rating</h1>
+        <p class="lead mb-4">
+          Helping consumers make sustainable packaging choices
         </p>
-        <a href="education.html" class="btn btn-dark btn-lg btn-press">Find out more</a>
+        <a href="#about" class="btn btn-light btn-lg btn-press">Learn More</a>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-5 bg-light" data-aos="fade-up">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6" data-aos="fade-right">
+            <img
+              src="assets/image2.png"
+              class="img-fluid rounded shadow"
+              alt="EIR Basket"
+            />
+          </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <h2 class="fw-bold">What is the Environmental Impact Rating?</h2>
+            <p>
+              The EIR is a quick way to understand the environmental footprint
+              of a product’s packaging—from recyclability to landfill
+              contribution.
+            </p>
+            <p>
+              Scores run <strong>1–5 stars</strong> based on material type, ease
+              of separation, compostability and more.
+            </p>
+            <p>
+              Comparing similar types of packaging—e.g. bottled drinks vs. cereal
+              boxes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RATING GUIDELINES -->
+    <section id="rating" class="py-5" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-heading text-center mb-5">Rating Guidelines</h2>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="flip-left">
+            <div
+              class="card card-custom h-100 p-4 d-flex flex-column text-center"
+            >
+              <h3>5/5</h3>
+              <p class="fs-2 text-success">★★★★★</p>
+              <p>Highly sustainable: recyclable, compostable mono-materials</p>
+
+              <!-- spacer pushes the button to the bottom -->
+              <div class="mt-auto">
+                <a href="guidelines.html#high-eir" class="btn btn-success">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+
+    
+          <!-- Card 2 -->
+  <div class="col-md-4" data-aos="flip-up">
+    <div class="card card-custom h-100 p-4 d-flex flex-column text-center">
+      <h3>3/5</h3>
+      <p class="fs-2 text-warning">★★★☆☆</p>
+      <p>Moderate impact: mixed materials or limited recyclability</p>
+      <div class="mt-auto">
+        <a href="guidelines.html#moderate-eir" class="btn btn-warning text-white">
+          Learn More
+        </a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="py-4 text-center bg-white">
-    &copy; 2025 Sir-Cular EIR Team | Monash Food Innovation Challenge
-  </footer>
+  <!-- Card 3 -->
+  <div class="col-md-4" data-aos="flip-right">
+    <div class="card card-custom h-100 p-4 d-flex flex-column text-center">
+      <h3>2/5</h3>
+      <p class="fs-2 text-danger">★★☆☆☆</p>
+      <p>Low sustainability: non-recyclable or complex packaging</p>
+      <div class="mt-auto">
+        <a href="guidelines.html#low-eir" class="btn btn-danger">
+          Learn More
+        </a>
+      </div>
+    </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Bootstrap JS, AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
-</body>
+    <!-- SERVICES -->
+    <section id="services" class="py-5 bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-heading">Services</h2>
+        <p class="text-center mb-4">
+          <strong
+            >EIR = <span class="text-success">Visibility</span> +
+            <span class="text-warning">Pressure</span> +
+            <span class="text-info">Progress</span></strong
+          >
+        </p>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-right">
+            <div class="card card-custom h-100 p-4">
+              <h5 class="fw-bold mb-3">Service Agreement</h5>
+              <p>
+                Form agreements with councils & businesses, collect & process
+                soft plastics, and deliver certified reports.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="card card-custom h-100 p-4">
+              <h5 class="fw-bold mb-3">Waste Diversion Guarantee</h5>
+              <p>
+                100% of collected plastic avoids landfill—converted into
+                biochar, bio-oil or syngas for reuse.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-left">
+            <div class="card card-custom h-100 p-4">
+              <h5 class="fw-bold mb-3">Sustainability Reporting</h5>
+              <p>
+                Provide ESG metrics, CO₂e emissions data, and recovery
+                certificates for investor & public reporting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & WORKSHOPS PROMO -->
+    <section id="workshops" class="edu-workshops-section" data-aos="fade-up">
+      <div class="bg-photos-grid position-absolute top-0 start-0 w-100 h-100">
+        <div class="row g-0 h-100">
+          <div
+            class="col-6"
+            style="background: url('assets/edu1.jpg') center/cover"
+          ></div>
+          <div
+            class="col-6"
+            style="background: url('assets/edu2.jpg') center/cover"
+          ></div>
+          <div
+            class="col-6"
+            style="background: url('assets/edu3.jpg') center/cover"
+          ></div>
+          <div
+            class="col-6"
+            style="background: url('assets/edu4.jpg') center/cover"
+          ></div>
+        </div>
+      </div>
+      <div class="overlay position-absolute inset-0 bg-dark opacity-50"></div>
+      <div
+        class="container position-relative h-100 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="promo-card bg-white rounded shadow-lg text-center p-5"
+          style="max-width: 800px"
+        >
+          <h2 class="fw-bold mb-3">Education Program</h2>
+          <p class="text-secondary mb-4">
+            45–60 min interactive workshops: rate plastic, learn EIR, and
+            prototype circular packaging.
+          </p>
+          <a href="education.html" class="btn btn-dark btn-lg btn-press"
+            >Find out more</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 text-center bg-white">
+      &copy; 2025 Sir-Cular EIR Team | Monash Food Innovation Challenge
+    </footer>
+
+    <!-- Bootstrap JS, AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+    </script>
+  </body>
 </html>

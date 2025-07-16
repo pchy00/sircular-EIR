@@ -1,14 +1,19 @@
-/* Base layout and font setup */
+/*=============================
+  1. Base & Typography
+==============================*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   background: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
 }
 
-/* Headings */
 h1, h2, h3, h4 {
   font-family: 'Rubik', sans-serif;
   font-weight: 600;
@@ -16,466 +21,302 @@ h1, h2, h3, h4 {
   margin-bottom: 1rem;
 }
 
-/* Navbar */
-.navbar {
-  background: transparent;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-}
-
-.navbar .nav-link {
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  font-size: 1rem;
-  color: white !important;
-}
-
-.navbar-brand {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: white !important;
-  
-}
-
-/* Hero Section */
-.hero-section {
-  position: relative;
-  height: 100vh;
-  background: url('assets/header-bg4.jpg') center center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 4rem;
-}
-
-.hero-section .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.15); /* softer overlay */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero-section h1,
-.hero-section p {
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.hero-section .btn {
-  border-radius: 30px;
-  padding: 0.6rem 1.5rem;
-  font-size: 1.1rem;
-  background: white;
-  color: #2d3748;
-  transition: all 0.3s ease;
-  font-weight: 600;
-}
-
-.hero-section .btn:hover {
-  background-color: #38a169;
-  color: white;
-}
-
-
-
-/* CTA Button */
-.btn-lg {
-  font-size: 1.1rem;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
-  transition: 0.3s;
-}
-
-.btn-lg:hover {
-  background-color: #38a169;
-  color: white;
-}
-
-/* Section styling */
-section.bg-light {
-  background-color: #f8f9fa;
-  padding: 4rem 1rem;
-}
-
-h2.mb-4 {
-  color: #38a169;
-}
-
-h2.fw-bold {
-  font-weight: 700;
-  color: #2d3748;
-}
-
-/* Paragraphs */
 p {
   font-size: 1.05rem;
   line-height: 1.8;
   color: #333;
+  margin-bottom: 1rem;
 }
 
-/* Rating cards */
-.card-rating {
-  border-radius: 15px;
-  border: 2px solid #ccc;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  background-color: white;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.card-rating:hover {
-  transform: translateY(-5px);
-}
-
-.card-rating h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.star {
-  font-size: 1.75rem;
-  margin: 0 0.1rem;
-}
-
-.green {
-  border-color: #38a169;
-}
-
-.yellow {
-  border-color: #ecc94b;
-}
-
-.red {
-  border-color: #e53e3e;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 2rem 1rem;
-  color: #555;
-  background-color: #f1f1f1;
-  margin-top: 3rem;
-}
-html {
-  scroll-behavior: smooth;
-}
-
-
-.about-hero {
-  position: relative;
-  height: 60vh;
-  background: url('assets/about-hero.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-  z-index: 1;
-}
-
-.about-hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-.about-hero h1,
-.about-hero p {
-  color: #fff;
-}
-
-/* Team sections */
-.team-section h2 {
-  color: #333;
-}
-
-.card img {
-  height: 280px;
-  object-fit: cover;
-}
-
-.card-title {
-  color: #2d3748;
-}
-
-.card-text {
-  font-size: 0.95rem;
-}
-
-
-/* services */
-
+/*=============================
+  2. Navbar
+==============================*/
 .navbar {
-  background: transparent; /* see-through */
+  background: transparent;
   position: absolute;
   width: 100%;
   top: 0;
   z-index: 10;
 }
 
+.navbar-brand {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff !important;
+}
+
 .navbar .nav-link {
-  color: #ffffff !important;
+  color: #fff !important;
   font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
   margin-left: 1rem;
 }
 
 .navbar .nav-link:hover {
-  color: #f1f1f1 !important;
   text-decoration: underline;
+  color: #f1f1f1 !important;
 }
 
-.navbar-brand {
-  color: #ffffff !important;
-  font-size: 1.5rem;
-  font-weight: 700;
+/*=============================
+  3. Hero Sections
+==============================*/
+
+/* Generic overlay container for heroes */
+.hero-section,
+.about-hero,
+.contact-hero,
+.edu-hero {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-section {
+  height: 60vh;
+  background-image: url('assets/header-bg4.jpg');
+}
+
+.about-hero {
+  height: 60vh;
+  background-image: url('assets/about-hero.jpg');
+}
+
+.contact-hero {
+  height: 40vh;
+  background-image: url('assets/services.jpg');
+  margin-bottom: 2rem;
+}
+
+.edu-hero {
+  height: 60vh;
+  background-image: url('assets/edu2.jpg');
+}
+
+.hero-section::before,
+.about-hero::before,
+.contact-hero::before,
+.edu-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-section .container,
+.about-hero .container,
+.contact-hero .container,
+.edu-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1,
+.about-hero h1,
+.contact-hero h1,
+.edu-hero h1,
+.hero-section p,
+.about-hero p,
+.contact-hero p,
+.edu-hero p {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* CTA Buttons */
+.btn,
+.btn-lg,
+.hero-section .btn-cta {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-light,
+.btn-cta {
+  background: #fff;
+  color: #2d3748;
+}
+
+.btn-light:hover,
+.btn-cta:hover,
+.btn-lg:hover {
+  background-color: #38a169;
+  color: #fff;
+}
+
+/*=============================
+  4. Sections & Headings
+==============================*/
+section.bg-light {
+  background: #f8f9fa;
+  padding: 4rem 1rem;
+}
+
+.section-heading {
   font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  color: #1e2a38;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.eir-results .card {
-  border-radius: 15px;
-  background: #ffffff;
+h2.mb-4 { color: #38a169; }
+h2.fw-bold { color: #2d3748; }
+
+/*=============================
+  5. Cards (Generic)
+==============================*/
+.card-custom,
+.card-rating,
+.team-card,
+.contact-card {
+  background: #fff;
   border: none;
+  border-radius: .75rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card-custom:hover,
+.card-rating:hover,
+.team-card:hover,
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/*=============================
+  6. Rating Cards
+==============================*/
+.card-rating {
+  border: 2px solid #ccc;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-rating h4 {
+  font-size: 1.25rem;
+}
+
+.star {
+  font-size: 1.75rem;
+  margin: 0 .1rem;
+}
+.star-empty { color: #e4e5e9; }
+
+.green  { border-color: #38a169; }
+.yellow { border-color: #ecc94b; }
+.red    { border-color: #e53e3e; }
+
+/*=============================
+  7. Calculator Styles
+==============================*/
+.eir-results .card,
+#calculator .card-custom {
+  min-height: 100%;
 }
 
 .eir-results h3,
-.eir-results h4 {
+.eir-results h4,
+#calculator h3, #calculator h4, #calculator h5 {
   font-family: 'Rubik', sans-serif;
   font-weight: 600;
 }
 
 .eir-results input[type=range] {
-  accent-color: #38a169; /* green accent */
+  accent-color: #38a169;
 }
 
-.eir-results .badge {
-  font-size: 0.95rem;
+.score-badge {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+  margin: auto;
 }
 
-#calculator .card-custom {
-  min-height: 100%;
-}
-#calculator h3, #calculator h4, #calculator h5 {
-  letter-spacing: 0.3px;
-}
-#sliders label span:first-child {
-  text-transform: capitalize;
-}
-#individualRatings .d-flex {
-  background: #f9f9f9;
-  margin-bottom: 0.5rem;
-}
-#improvements .improve-box {
-  font-size: 0.9rem;
+.improve-box {
+  border-left: 4px solid #facc15;
+  background: #fef9c3;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  margin-bottom: .5rem;
 }
 
+.good-box {
+  border-left: 4px solid #4ade80;
+  background: #dcfce7;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+}
 
-/* Services cards */
+/*=============================
+  8. Services Cards
+==============================*/
 #services .card {
-  border: none;
-  border-left-width: 4px;
-  border-left-style: solid;
+  border-left: 4px solid;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  transition: transform .2s ease;
-}
-#services .card:hover {
-  transform: translateY(-4px);
 }
 #services .card-success { border-left-color: #38a169; }
 #services .card-warning { border-left-color: #ecc94b; }
 #services .card-info    { border-left-color: #319795; }
 
-#services .card-body { padding: 1.5rem; }
-#services .card-icon {
-  font-size: 2rem;
-  line-height: 1;
-  margin-right: 0.75rem;
+#services .card-body {
+  padding: 1.5rem;
 }
-#services .card-title {
+
+.card-icon {
+  font-size: 2rem;
+  margin-right: .75rem;
+}
+
+.card-title {
   font-size: 1.25rem;
-  font-weight: 600;
   margin-bottom: 1rem;
 }
-#services ul { margin-bottom: 0; }
-#services ul ul { margin-top: .5rem; }
 
+/*=============================
+  9. Team Section
+==============================*/
+.team-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
 
+.team-card h5 { color: #2d3748; }
+
+/*=============================
+ 10. Education Promo
+==============================*/
 .edu-workshops-section {
-  height: 80vh;                /* makes it taller */
+  height: 80vh;
   overflow: hidden;
 }
+.bg-photos-grid { z-index: 1; }
+.overlay        { z-index: 2; }
+.promo-card     { z-index: 3; }
 
-.bg-photos-grid {
-  z-index: 1;
-}
-
-.overlay {
-  z-index: 2;
-}
-
-.promo-card {
-  z-index: 3;
-  border-radius: 1rem;
-}
-
-/* Section headings */
-.section-heading {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 600;
-  color: #1e2a38;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-/* Modern cards */
-.card-custom {
-  border: none;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.card-custom:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-/* Hero overlay */
-.edu-hero {
-  position: relative;
-  background: url('assets/edu2.jpg') center/cover no-repeat;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-.edu-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-.edu-hero .container {
-  position: relative;
-  z-index: 1;
-}
-
-.edu-hero .container,
-.edu-hero h1,
-.edu-hero p {
-  color: #fff !important;
-}
-
-
-
-/* contact */
-/* Gradient heading */
+/*=============================
+ 11. Contact Form
+==============================*/
 .gradient-text {
   background: linear-gradient(90deg, #38a169, #319795);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/* Hero banner */
-.contact-hero {
-  position: relative;
-  background: url('assets/services.jpg') center/cover no-repeat;
-  height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-.contact-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-.contact-hero h1 {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 600;
-}
-
-/* Form card */
-.contact-card {
-  background: #fff;
-  border-radius: 0.75rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  padding: 2rem;
-  margin-bottom: 3rem;
-}
-
-/* Contact info */
-.contact-info .bi {
-  font-size: 1.5rem;
-  color: #38a169;
-  margin-right: 0.75rem;
-}
-
-/* Shared card style */
-.card-custom {
-  background: #fff;
-  border: none;
-  border-radius: .75rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.card-custom:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-/* Section heading */
-.section-heading {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 600;
-  color: #1e2a38;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-/* Shared card style */
-.card-custom {
-  background: #fff;
-  border: none;
-  border-radius: .75rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.card-custom:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-/* Section heading */
-.section-heading {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 600;
-  color: #1e2a38;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-
 
