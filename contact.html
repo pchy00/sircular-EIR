@@ -4,14 +4,146 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - EIR</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+
+  <!-- Bootstrap CSS & AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Bootstrap Icons & Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Your custom -->
   <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar over hero */
+    .navbar {
+      background: transparent;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+    }
+    .nav-link, .navbar-brand {
+      color: #fff !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #e9ecef !important;
+    }
+
+    /* Hero */
+    .contact-hero {
+      position: relative;
+      background: url('assets/header-bg.png') center/cover no-repeat;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .contact-hero h1 {
+      position: relative;
+      z-index: 1;
+      font-family: 'Rubik', sans-serif;
+      font-size: 3rem;
+      color: #fff;
+      margin: 0;
+    }
+
+    /* Section heading */
+    .section-heading {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 600;
+      color: #1e2a38;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .section-heading::after {
+      content: '';
+      width: 3rem;
+      height: 0.25rem;
+      background: #38a169;
+      display: block;
+      margin: 0.5rem auto 0;
+      border-radius: .125rem;
+    }
+
+    /* Cards */
+    .card-custom {
+      border: none;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .card-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .card-title {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 600;
+      color: #38a169;
+    }
+
+    /* Form labels & inputs */
+    .form-label {
+      font-weight: 500;
+      color: #1e2a38;
+    }
+    .form-control {
+      border-radius: 0.5rem;
+    }
+
+    /* Buttons */
+    .btn-success {
+      border-radius: 50px;
+      padding: 0.6rem 2rem;
+      font-weight: 600;
+      transition: background .3s ease;
+    }
+    .btn-success:hover {
+      background: #2f855a;
+    }
+
+    /* Social icons */
+    .btn-outline-success {
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .3s ease, color .3s ease;
+    }
+    .btn-outline-success:hover {
+      background: #38a169;
+      color: #fff;
+    }
+  </style>
 </head>
-<body class="bg-light">
+
+<body>
+
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="index.html">EIR</a>
+      <a class="navbar-brand text-white fw-bold" href="index.html"><span class="gradient-text">EIR</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,19 +161,19 @@
   </nav>
 
   <!-- HERO -->
-  <section class="contact-hero">
-    <h1>Get in Touch</h1>
+  <section class="contact-hero" id="contact" data-aos="fade-in">
+    <h1 data-aos="zoom-in" data-aos-delay="200">Get in Touch</h1>
   </section>
 
-  <!-- CONTACT FORM & INFO -->
+  <!-- MAIN CONTENT -->
   <section class="container my-5">
-    <h2 class="section-heading">Contact Us</h2>
+    <h2 class="section-heading" data-aos="fade-up">Contact Us</h2>
     <div class="row g-4">
-      <!-- Form Card -->
-      <div class="col-lg-6">
+      <!-- MESSAGE FORM -->
+      <div class="col-lg-6" data-aos="fade-right">
         <div class="card card-custom h-100">
           <div class="card-body">
-            <h5 class="card-title text-success mb-4">Send Us a Message</h5>
+            <h5 class="card-title mb-4">Send Us a Message</h5>
             <form>
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
@@ -56,33 +188,33 @@
                 <textarea id="message" class="form-control" rows="5" placeholder="Type your message..." required></textarea>
               </div>
               <div class="text-end">
-                <button type="submit" class="btn btn-success px-5">Send Message</button>
+                <button type="submit" class="btn btn-success">Send Message</button>
               </div>
             </form>
           </div>
         </div>
       </div>
 
-      <!-- Info Card -->
-      <div class="col-lg-6">
+      <!-- CONTACT INFO -->
+      <div class="col-lg-6" data-aos="fade-left">
         <div class="card card-custom h-100">
           <div class="card-body">
-            <h5 class="card-title text-success mb-4">Contact Info</h5>
-            <ul class="list-unstyled">
+            <h5 class="card-title mb-4">Contact Info</h5>
+            <ul class="list-unstyled mb-4">
               <li class="d-flex align-items-center mb-3">
-                <i class="bi bi-geo-alt-fill text-success me-2"></i>
+                <i class="bi bi-geo-alt-fill text-success me-3"></i>
                 <span>123 Circular Way, Melbourne, VIC 3000</span>
               </li>
               <li class="d-flex align-items-center mb-3">
-                <i class="bi bi-telephone-fill text-success me-2"></i>
+                <i class="bi bi-telephone-fill text-success me-3"></i>
                 <span>+61 3 9123 4567</span>
               </li>
-              <li class="d-flex align-items-center mb-3">
-                <i class="bi bi-envelope-fill text-success me-2"></i>
+              <li class="d-flex align-items-center">
+                <i class="bi bi-envelope-fill text-success me-3"></i>
                 <span>contact@eirsustainability.com.au</span>
               </li>
             </ul>
-            <div class="mt-4">
+            <div class="d-flex">
               <a href="#" class="btn btn-outline-success btn-sm me-2"><i class="bi bi-facebook"></i></a>
               <a href="#" class="btn btn-outline-success btn-sm me-2"><i class="bi bi-instagram"></i></a>
               <a href="#" class="btn btn-outline-success btn-sm"><i class="bi bi-linkedin"></i></a>
@@ -94,14 +226,80 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="text-center py-4 bg-white">
-    &copy; 2025 Sir-Cular EIR Team | Built for the Monash Food Innovation Challenge
-  </footer>
+  <footer class="bg-white text-dark pt-5">
+  <div class="container">
+    <div class="row gy-4">
+      <!-- Logo & About -->
+      <div class="col-md-3">
+        <a href="index.html" class="d-inline-block mb-3">
+          <img src="assets/eirlogo.png" alt="EIR logo" style="height: 40px;">
+        </a>
+        <p class="small">
+          Environmental Impact Rating (EIR) helps consumers and businesses understand packaging sustainability at a glance, driving the transition to a circular economy.
+        </p>
+      </div>
 
-  <!-- Bootstrap JS + Icons -->
+      <!-- Quick Links -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="index.html" class="text-dark text-decoration-none">Home</a></li>
+          <li><a href="about.html" class="text-dark text-decoration-none">About</a></li>
+          <li><a href="calculator.html" class="text-dark text-decoration-none">Calculator</a></li>
+          <li><a href="services.html" class="text-dark text-decoration-none">Services</a></li>
+          <li><a href="education.html" class="text-dark text-decoration-none">Education & Workshops</a></li>
+          <li><a href="contact.html" class="text-dark text-decoration-none">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Contact Info</h6>
+        <ul class="list-unstyled small">
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-geo-alt-fill me-2"></i>
+            123 Circular Way, Melbourne, VIC 3000
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-telephone-fill me-2"></i>
+            +61 3 9123 4567
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-envelope-fill me-2"></i>
+            <a href="mailto:contact@eirsustainability.com.au" class="text-dark text-decoration-none">contact@eirsustainability.com.au</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social & Newsletter -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Follow Us</h6>
+        <div class="mb-3">
+          <a href="#" class="text-dark fs-4 me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-dark fs-4 me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-dark fs-4"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <h6 class="text-uppercase fw-bold mb-2">Newsletter</h6>
+        <form class="d-flex">
+          <input type="email" class="form-control form-control-sm me-2" placeholder="Your email" required>
+          <button class="btn btn-dark btn-sm">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center small">
+      &copy; 2025 Sir-Cular EIR Team | Built for the Monash Food Innovation Challenge
+    </div>
+  </div>
+</footer>
+
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
-
-
 </html>

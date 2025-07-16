@@ -59,6 +59,27 @@ p {
   color: #f1f1f1 !important;
 }
 
+
+    /* ===== navbar ===== */
+    .navbar {
+      backdrop-filter: blur(8px);
+      transition: background .3s;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #059669 !important;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: #059669 !important;
+    }
+
+
+
 /*=============================
   3. Hero Sections
 ==============================*/
@@ -220,7 +241,7 @@ h2.fw-bold { color: #2d3748; }
 /*=============================
   7. Calculator Styles
 ==============================*/
-.eir-results .card,
+/* .eir-results .card,
 #calculator .card-custom {
   min-height: 100%;
 }
@@ -260,7 +281,7 @@ h2.fw-bold { color: #2d3748; }
   background: #dcfce7;
   padding: .5rem 1rem;
   border-radius: .5rem;
-}
+} */
 
 /*=============================
   8. Services Cards

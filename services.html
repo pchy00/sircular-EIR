@@ -8,68 +8,216 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet"/>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css"/>
-
+  <link href="style.css" rel="stylesheet" />
+  
   <style>
-    /* Modern card titles */
-    .card-title {
+    /* ===== basics ===== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #334155;
+      line-height: 1.6;
+    }
+    h1{
       font-family: 'Rubik', sans-serif;
+      font-weight: 600;
+      color: #fff;
+    }
+     h2, h3, h4, h5 {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    /* ===== navbar ===== */
+    .navbar {
+      backdrop-filter: blur(8px);
+      transition: background .3s;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #059669 !important;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: #059669 !important;
+    }
+
+    /* ===== hero ===== */
+    .hero-section {
+      position: relative;
+      background: url('assets/ser1.jpg') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #fff;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+    .hero-content h1 {
+      font-size: 2.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== sections ===== */
+    section.container {
+      padding: 4rem 1rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: #059669;
+      border-radius: 2px;
+    }
+
+    /* ===== cards ===== */
+    .card-custom {
+      border: none;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .card-custom:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+    .card-title {
       font-size: 1.25rem;
-      color: #1e2a38;
-      margin-bottom: 1rem;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
       display: flex;
       align-items: center;
     }
     .card-title .bi {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-right: 0.5rem;
+    }
+    .card-body p {
+      color: #475569;
+    }
+    .card-body .price {
+      margin-top: 0.75rem;
+      font-weight: 600;
+      color: #059669;
+    }
+
+    /* ===== lists ===== */
+    .list-group-flush .list-group-item {
+      border: none;
+      padding-left: 0;
+      padding-right: 0;
+      color: #475569;
+      font-size: 1rem;
+    }
+    .list-group-flush .list-group-item + .list-group-item {
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ===== footer ===== */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #fff;
+      color: #64748b;
     }
   </style>
 </head>
-<body>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="index.html">EIR</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="calculator.html">Calculator</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="education.html">Education & workshops</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact Us</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="index.html"><span class="gradient-text">EIR</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="calculator.html"
+                >Calculator</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="education.html"
+                >Education & workshops</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- HERO SECTION -->
-  <header class="hero-section" style="background:url('assets/ser1.jpg') center/cover no-repeat; height:60vh; display:flex; align-items:center; justify-content:center; position:relative;">
-    <div style="position:relative; z-index:1; text-align:center; color:#fff;">
-      <h1 class="display-4 fw-bold">Our Services</h1>
-      <p class="lead">Waste-as-a-Service | Sustainability Reporting | Circular Economy Solutions</p>
+  <header class="hero-section">
+    <div class="hero-content" data-aos="zoom-in">
+      <h1>Our Services</h1>
+      <p>Waste-as-a-Service | Sustainability Reporting | Circular Economy Solutions</p>
     </div>
-    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4);"></div>
   </header>
 
   <!-- HOW IT WORKS -->
-  <section class="container my-5">
-    <h2 class="fw-bold mb-4 text-center">How It Works</h2>
+  <section id="how-it-works" class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">How It Works</h2>
     <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-4" data-aos="fade-right">
+        <div class="card-custom h-100">
           <div class="card-body">
             <h5 class="card-title">
               <i class="bi bi-file-earmark-text-fill text-primary"></i>
@@ -79,8 +227,8 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-custom h-100">
           <div class="card-body">
             <h5 class="card-title">
               <i class="bi bi-recycle text-success"></i>
@@ -90,8 +238,8 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-4" data-aos="fade-left" data-aos-delay="200">
+        <div class="card-custom h-100">
           <div class="card-body">
             <h5 class="card-title">
               <i class="bi bi-bar-chart-line-fill text-info"></i>
@@ -105,42 +253,42 @@
   </section>
 
   <!-- VALUE SECTION -->
-  <section class="container my-5">
-    <h2 class="fw-bold mb-4 text-center">The Value of What We Create</h2>
+  <section id="value" class="container bg-white rounded-3 my-5 p-5" data-aos="fade-up">
+    <h2 class="section-title text-center">The Value of What We Create</h2>
     <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card-custom h-100">
           <div class="card-body">
             <h5 class="card-title">
               <i class="bi bi-tree-fill text-success"></i>
               Biochar
             </h5>
             <p>Sold to farmers & councils for soil improvement, water retention, and carbon credits.</p>
-            <p class="text-success fw-semibold">~$500–$1,500/tonne</p>
+            <p class="price">~$500–$1,500 / tonne</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card-custom h-100">
           <div class="card-body">
             <h5 class="card-title">
               <i class="bi bi-droplet-fill text-warning"></i>
               Bio-oil
             </h5>
             <p>Used by industrial plants or blended into renewable fuels.</p>
-            <p class="text-success fw-semibold">~$300–$600/tonne</p>
+            <p class="price">~$300–$600 / tonne</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card-custom h-100">
           <div class="card-body">
             <h5 class="card-title">
               <i class="bi bi-lightning-charge-fill text-info"></i>
               Syngas
             </h5>
             <p>On-site energy source to power operations, reducing costs and emissions.</p>
-            <p class="text-success fw-semibold">Cost-saving fuel source</p>
+            <p class="price">Cost-saving fuel source</p>
           </div>
         </div>
       </div>
@@ -148,8 +296,8 @@
   </section>
 
   <!-- STAKEHOLDERS SECTION -->
-  <section class="container my-5">
-    <h2 class="fw-bold mb-4 text-center">Who We Work With</h2>
+  <section id="partners" class="container my-5" data-aos="fade-up">
+    <h2 class="section-title text-center">Who We Work With</h2>
     <div class="row g-4">
       <div class="col-md-6">
         <ul class="list-group list-group-flush">
@@ -169,11 +317,80 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="text-center py-4 bg-white">
-    &copy; 2025 Sir-Cular EIR Team | Built for the Monash Food Innovation Challenge
-  </footer>
+  <footer class="bg-white text-dark pt-5">
+  <div class="container">
+    <div class="row gy-4">
+      <!-- Logo & About -->
+      <div class="col-md-3">
+        <a href="index.html" class="d-inline-block mb-3">
+          <img src="assets/eirlogo.png" alt="EIR logo" style="height: 40px;">
+        </a>
+        <p class="small">
+          Environmental Impact Rating (EIR) helps consumers and businesses understand packaging sustainability at a glance, driving the transition to a circular economy.
+        </p>
+      </div>
 
-  <!-- Bootstrap JS -->
+      <!-- Quick Links -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="index.html" class="text-dark text-decoration-none">Home</a></li>
+          <li><a href="about.html" class="text-dark text-decoration-none">About</a></li>
+          <li><a href="calculator.html" class="text-dark text-decoration-none">Calculator</a></li>
+          <li><a href="services.html" class="text-dark text-decoration-none">Services</a></li>
+          <li><a href="education.html" class="text-dark text-decoration-none">Education & Workshops</a></li>
+          <li><a href="contact.html" class="text-dark text-decoration-none">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Contact Info</h6>
+        <ul class="list-unstyled small">
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-geo-alt-fill me-2"></i>
+            123 Circular Way, Melbourne, VIC 3000
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-telephone-fill me-2"></i>
+            +61 3 9123 4567
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-envelope-fill me-2"></i>
+            <a href="mailto:contact@eirsustainability.com.au" class="text-dark text-decoration-none">contact@eirsustainability.com.au</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social & Newsletter -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Follow Us</h6>
+        <div class="mb-3">
+          <a href="#" class="text-dark fs-4 me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-dark fs-4 me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-dark fs-4"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <h6 class="text-uppercase fw-bold mb-2">Newsletter</h6>
+        <form class="d-flex">
+          <input type="email" class="form-control form-control-sm me-2" placeholder="Your email" required>
+          <button class="btn btn-dark btn-sm">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center small">
+      &copy; 2025 Sir-Cular EIR Team | Built for the Monash Food Innovation Challenge
+    </div>
+  </div>
+</footer>
+
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
 </html>

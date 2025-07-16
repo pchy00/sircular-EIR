@@ -7,189 +7,252 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet"/>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css"/>
+  <!-- Custom -->
 
-  <!-- <style>
+      <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fafc;
+      color: #1e2a38;
+    }
+
+
     /* Hero */
     .edu-hero {
       position: relative;
-      background: url('assets/edu2.jpg') center/cover no-repeat;
       height: 50vh;
+      background: url('assets/edu2.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
       text-align: center;
     }
     .edu-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
+      content:'';
+      position:absolute; inset:0;
+      background:rgba(0,0,0,0.6);
     }
-    .edu-hero .container { position: relative; z-index: 1; }
+    .edu-hero .container {
+      position: relative; z-index:1;
+    }
+    .edu-hero h1 {
+      font-family: 'Rubik', sans-serif;
+      font-size: 2.5rem;
+      color: #fff;
+    }
+    .edu-hero p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
 
     /* Section headings */
     .section-heading {
       font-family: 'Rubik', sans-serif;
       font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #1e2a38;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-heading::after {
+      content:'';
+      position:absolute;
+      left:0; bottom:-8px;
+      width:50px; height:4px;
+      background:#38a169;
+      border-radius:2px;
     }
 
-    /* Timeline boxes */
-    .timeline-step {
-      border-left: 4px solid #38a169;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
+    /* Cards */
+    .card-custom {
+      border:none;
+      border-radius:1rem;
+      box-shadow:0 4px 20px rgba(0,0,0,0.05);
+      transition:transform .3s,box-shadow .3s;
     }
-    .timeline-step h6 {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+    .card-custom:hover {
+      transform:translateY(-6px);
+      box-shadow:0 8px 30px rgba(0,0,0,0.1);
     }
-  </style> -->
+    .card-custom .card-body {
+      padding:1.5rem;
+    }
+    .card-custom .card-title {
+      font-family:'Rubik',sans-serif;
+      font-weight:500;
+      margin-bottom:.5rem;
+    }
+    .card-custom p {
+      color:#555;
+    }
+
+    /* Alternating section bg */
+    .alt-bg { background:#f1fdf8; }
+    .mb-5 { margin-bottom:3rem !important; }
+  </style>
 </head>
-<body class="bg-light">
+<body data-aos-once="true">
 
-  <!-- NAVBAR (same as Services) -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="index.html">EIR</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="calculator.html">Calculator</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="education.html">Education & workshops</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact Us</a></li>
-        </ul>
+  <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="index.html"><span class="gradient-text">EIR</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="calculator.html"
+                >Calculator</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="education.html"
+                >Education & workshops</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- HERO -->
-<header class="edu-hero mb-5">
-  <div class="container text-center text-white">
-    <h1 class="display-4 fw-bold">Education &amp; Workshops</h1>
-    <p class="lead">Interactive 45–60 min sessions on plastic, EIR ratings &amp; the Circular Economy</p>
-  </div>
-</header>
-
+  <header class="edu-hero mb-5">
+    <div class="container">
+      <h1 class="fw-bold">Education &amp; Workshops</h1>
+      <p class="lead">Interactive 45–60 min sessions on plastic, EIR ratings & the Circular Economy</p>
+    </div>
+  </header>
 
   <!-- ABOUT -->
-  <section class="container mb-5">
+  <section class="container text-center mb-5">
     <h2 class="section-heading">About Our Workshops</h2>
-    <p class="text-center text-secondary mx-auto" style="max-width:700px;">
+    <p class="text-muted mx-auto" style="max-width:700px;">
       Our 45–60 minute EIR workshop is a hands-on, game-based session designed to teach participants how to
       identify different plastics, interpret Environmental Impact Ratings, and apply circular economy principles
       in everyday choices.
     </p>
   </section>
 
-  <!-- TOPICS COVERED as CARDS -->
-  <section class="container mb-5">
-    <h3 class="section-heading">Topics Covered</h3>
-    <div class="row g-4">
-      <div class="col-md-4">
+  <!-- TOPICS COVERED -->
+  <section class="container mb-5 alt-bg py-5">
+    <h2 class="section-heading text-center">Topics Covered</h2>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4" data-aos="fade-up">
         <div class="card card-custom h-100">
           <div class="card-body">
-            <h5 class="card-title">The impact of common plastics</h5>
-            <p class="text-secondary">Lifecycle & environmental footprint</p>
+            <h5 class="card-title">Impact of Common Plastics</h5>
+            <p>Lifecycle & environmental footprint</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card card-custom h-100">
           <div class="card-body">
-            <h5 class="card-title">Understanding EIR scores</h5>
-            <p class="text-secondary">How our rating system works</p>
+            <h5 class="card-title">Understanding EIR Scores</h5>
+            <p>How our rating system works</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
         <div class="card card-custom h-100">
           <div class="card-body">
             <h5 class="card-title">Recyclability & Circular Economy</h5>
-            <p class="text-secondary">Principles & best practices</p>
+            <p>Principles & best practices</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
         <div class="card card-custom h-100">
           <div class="card-body">
-            <h5 class="card-title">Interactive rating game</h5>
-            <p class="text-secondary">Rate real packaging in teams</p>
+            <h5 class="card-title">Interactive Rating Game</h5>
+            <p>Rate real packaging in teams</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
         <div class="card card-custom h-100">
           <div class="card-body">
-            <h5 class="card-title">Design challenge</h5>
-            <p class="text-secondary">Prototype lower-impact packaging</p>
+            <h5 class="card-title">Design Challenge</h5>
+            <p>Prototype lower-impact packaging</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
         <div class="card card-custom h-100">
           <div class="card-body">
             <h5 class="card-title">Discussion & Q&amp;A</h5>
-            <p class="text-secondary">Insights & next-steps</p>
+            <p>Insights & next-steps</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TIMELINE as CARDS -->
-  <section class="container mb-5">
-    <h3 class="section-heading text-center">Workshop Outline</h3>
-    <div class="row g-4">
-      <!-- each step -->
-      <div class="col-md-4">
-        <div class="card card-custom h-100">
-          <div class="card-body text-center">
+  <!-- TIMELINE OUTLINE -->
+  <section class="container mb-5 py-5">
+    <h2 class="section-heading text-center">Workshop Outline</h2>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card card-custom h-100 text-center">
+          <div class="card-body">
             <h5 class="card-title">Intro (5 min)</h5>
-            <p class="text-secondary">Plastic lifecycle & EIR overview</p>
+            <p>Plastic lifecycle & EIR overview</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-custom h-100">
-          <div class="card-body text-center">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card card-custom h-100 text-center">
+          <div class="card-body">
             <h5 class="card-title">Rating Game (15 min)</h5>
-            <p class="text-secondary">Team-based scoring challenge</p>
+            <p>Team-based scoring challenge</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-custom h-100">
-          <div class="card-body text-center">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card card-custom h-100 text-center">
+          <div class="card-body">
             <h5 class="card-title">Design Challenge (15 min)</h5>
-            <p class="text-secondary">Prototype a better pack</p>
+            <p>Prototype a better pack</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-custom h-100">
-          <div class="card-body text-center">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card card-custom h-100 text-center">
+          <div class="card-body">
             <h5 class="card-title">Results (10 min)</h5>
-            <p class="text-secondary">Share findings & insights</p>
+            <p>Share findings & insights</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-custom h-100">
-          <div class="card-body text-center">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="card card-custom h-100 text-center">
+          <div class="card-body">
             <h5 class="card-title">Wrap-up (5 min)</h5>
-            <p class="text-secondary">Q&amp;A & next steps</p>
+            <p>Q&amp;A & next steps</p>
           </div>
         </div>
       </div>
@@ -197,17 +260,85 @@
   </section>
 
   <!-- CTA -->
-  <section class="container text-center mb-5">
-    <a href="contact.html#enquire" class="btn btn-success btn-lg">
+  <section class="text-center mb-5">
+    <a href="contact.html#enquire" class="btn btn-success btn-lg" data-aos="zoom-in">
       Enquire About Booking
     </a>
   </section>
 
-  <footer class="text-center py-4 bg-white">
-    &copy; 2025 Sir-Cular EIR Team | Monash Food Innovation Challenge
-  </footer>
+  <!-- FOOTER -->
+  <footer class="bg-white text-dark pt-5">
+  <div class="container">
+    <div class="row gy-4">
+      <!-- Logo & About -->
+      <div class="col-md-3">
+        <a href="index.html" class="d-inline-block mb-3">
+          <img src="assets/eirlogo.png" alt="EIR logo" style="height: 40px;">
+        </a>
+        <p class="small">
+          Environmental Impact Rating (EIR) helps consumers and businesses understand packaging sustainability at a glance, driving the transition to a circular economy.
+        </p>
+      </div>
 
+      <!-- Quick Links -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="index.html" class="text-dark text-decoration-none">Home</a></li>
+          <li><a href="about.html" class="text-dark text-decoration-none">About</a></li>
+          <li><a href="calculator.html" class="text-dark text-decoration-none">Calculator</a></li>
+          <li><a href="services.html" class="text-dark text-decoration-none">Services</a></li>
+          <li><a href="education.html" class="text-dark text-decoration-none">Education & Workshops</a></li>
+          <li><a href="contact.html" class="text-dark text-decoration-none">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Contact Info</h6>
+        <ul class="list-unstyled small">
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-geo-alt-fill me-2"></i>
+            123 Circular Way, Melbourne, VIC 3000
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-telephone-fill me-2"></i>
+            +61 3 9123 4567
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-envelope-fill me-2"></i>
+            <a href="mailto:contact@eirsustainability.com.au" class="text-dark text-decoration-none">contact@eirsustainability.com.au</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social & Newsletter -->
+      <div class="col-md-3">
+        <h6 class="text-uppercase fw-bold mb-3">Follow Us</h6>
+        <div class="mb-3">
+          <a href="#" class="text-dark fs-4 me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-dark fs-4 me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-dark fs-4"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <h6 class="text-uppercase fw-bold mb-2">Newsletter</h6>
+        <form class="d-flex">
+          <input type="email" class="form-control form-control-sm me-2" placeholder="Your email" required>
+          <button class="btn btn-dark btn-sm">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center small">
+      &copy; 2025 Sir-Cular EIR Team | Built for the Monash Food Innovation Challenge
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap & AOS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script> AOS.init({ duration:600 }); </script>
 </body>
-
 </html>
