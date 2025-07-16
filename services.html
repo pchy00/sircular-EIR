@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EIR Services</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* Modern card titles */
+    .card-title {
+      font-family: 'Rubik', sans-serif;
+      font-size: 1.25rem;
+      color: #1e2a38;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    .card-title .bi {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,6 +48,7 @@
           <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="calculator.html">Calculator</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="education.html">Education & workshops</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact Us</a></li>
         </ul>
       </div>
@@ -30,38 +56,48 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <header class="hero-section" style="background: url('assets/services-bg.jpg') center/cover no-repeat; height: 60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center;">
-    <div>
+  <header class="hero-section" style="background:url('assets/ser1.jpg') center/cover no-repeat; height:60vh; display:flex; align-items:center; justify-content:center; position:relative;">
+    <div style="position:relative; z-index:1; text-align:center; color:#fff;">
       <h1 class="display-4 fw-bold">Our Services</h1>
       <p class="lead">Waste-as-a-Service | Sustainability Reporting | Circular Economy Solutions</p>
     </div>
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4);"></div>
   </header>
 
-  <!-- SERVICES CONTENT -->
+  <!-- HOW IT WORKS -->
   <section class="container my-5">
     <h2 class="fw-bold mb-4 text-center">How It Works</h2>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card shadow-sm h-100">
           <div class="card-body">
-            <h5 class="card-title fw-bold">🧾 Service Agreement</h5>
-            <p>We collect soft plastic waste from your facilities, process it with advanced technology, and provide certified waste diversion and carbon offset reports.</p>
+            <h5 class="card-title">
+              <i class="bi bi-file-earmark-text-fill text-primary"></i>
+              Service Agreement
+            </h5>
+            <p>We collect soft plastic waste, process it with advanced technology, and provide certified waste-diversion & carbon-offset reports.</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card shadow-sm h-100">
           <div class="card-body">
-            <h5 class="card-title fw-bold">♻ Waste Diversion Guarantee</h5>
-            <p>100% of collected plastic avoids landfill. It’s converted into biochar, bio-oil, or syngas for reuse and energy generation.</p>
+            <h5 class="card-title">
+              <i class="bi bi-recycle text-success"></i>
+              Waste Diversion Guarantee
+            </h5>
+            <p>100% of collected plastic avoids landfill and is converted into biochar, bio-oil, or syngas for reuse and energy.</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card shadow-sm h-100">
           <div class="card-body">
-            <h5 class="card-title fw-bold">📊 Sustainability Reporting</h5>
-            <p>Receive certificates of recovery, emissions reports, and ESG metrics to share with investors and customers.</p>
+            <h5 class="card-title">
+              <i class="bi bi-bar-chart-line-fill text-info"></i>
+              Sustainability Reporting
+            </h5>
+            <p>Receive recovery certificates, CO₂e emissions data, and ESG metrics to share with stakeholders.</p>
           </div>
         </div>
       </div>
@@ -73,24 +109,39 @@
     <h2 class="fw-bold mb-4 text-center">The Value of What We Create</h2>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="p-4 border rounded shadow-sm h-100">
-          <h5 class="fw-bold">🌱 Biochar</h5>
-          <p>Sold to farmers and councils for soil improvement, water retention, and carbon credits.</p>
-          <p class="text-success">~$500–$1,500/tonne</p>
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-tree-fill text-success"></i>
+              Biochar
+            </h5>
+            <p>Sold to farmers & councils for soil improvement, water retention, and carbon credits.</p>
+            <p class="text-success fw-semibold">~$500–$1,500/tonne</p>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="p-4 border rounded shadow-sm h-100">
-          <h5 class="fw-bold">🔥 Bio-oil</h5>
-          <p>Used by industrial plants or processed into renewable fuel blends.</p>
-          <p class="text-success">~$300–$600/tonne</p>
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-droplet-fill text-warning"></i>
+              Bio-oil
+            </h5>
+            <p>Used by industrial plants or blended into renewable fuels.</p>
+            <p class="text-success fw-semibold">~$300–$600/tonne</p>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="p-4 border rounded shadow-sm h-100">
-          <h5 class="fw-bold">⚡ Syngas</h5>
-          <p>Used on-site to power operations, reduce costs, and enable energy independence.</p>
-          <p class="text-success">Cost-saving fuel source</p>
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-lightning-charge-fill text-info"></i>
+              Syngas
+            </h5>
+            <p>On-site energy source to power operations, reducing costs and emissions.</p>
+            <p class="text-success fw-semibold">Cost-saving fuel source</p>
+          </div>
         </div>
       </div>
     </div>
@@ -101,27 +152,28 @@
     <h2 class="fw-bold mb-4 text-center">Who We Work With</h2>
     <div class="row g-4">
       <div class="col-md-6">
-        <ul>
-          <li>Input Suppliers: Food manufacturers, events, councils</li>
-          <li>Plant Designers: Pyrolysis equipment manufacturers</li>
-          <li>Off-takers: Farmers, industrial firms, energy users</li>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Input Suppliers: Food manufacturers, events, councils</li>
+          <li class="list-group-item">Plant Designers: Pyrolysis equipment manufacturers</li>
+          <li class="list-group-item">Off-takers: Farmers, industrial firms, energy users</li>
         </ul>
       </div>
       <div class="col-md-6">
-        <ul>
-          <li>Regulators: EPA, Clean Energy Regulator</li>
-          <li>Investors: ARENA, CEFC, state funds</li>
-          <li>Partners: Universities, logistics providers</li>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Regulators: EPA, Clean Energy Regulator</li>
+          <li class="list-group-item">Investors: ARENA, CEFC, state funds</li>
+          <li class="list-group-item">Partners: Universities, logistics providers</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- FOOTER -->
+  <footer class="text-center py-4 bg-white">
     &copy; 2025 Sir-Cular EIR Team | Built for the Monash Food Innovation Challenge
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

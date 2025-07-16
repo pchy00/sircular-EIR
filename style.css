@@ -287,3 +287,195 @@ html {
 }
 
 
+/* Services cards */
+#services .card {
+  border: none;
+  border-left-width: 4px;
+  border-left-style: solid;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform .2s ease;
+}
+#services .card:hover {
+  transform: translateY(-4px);
+}
+#services .card-success { border-left-color: #38a169; }
+#services .card-warning { border-left-color: #ecc94b; }
+#services .card-info    { border-left-color: #319795; }
+
+#services .card-body { padding: 1.5rem; }
+#services .card-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-right: 0.75rem;
+}
+#services .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+#services ul { margin-bottom: 0; }
+#services ul ul { margin-top: .5rem; }
+
+
+.edu-workshops-section {
+  height: 80vh;                /* makes it taller */
+  overflow: hidden;
+}
+
+.bg-photos-grid {
+  z-index: 1;
+}
+
+.overlay {
+  z-index: 2;
+}
+
+.promo-card {
+  z-index: 3;
+  border-radius: 1rem;
+}
+
+/* Section headings */
+.section-heading {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  color: #1e2a38;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Modern cards */
+.card-custom {
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* Hero overlay */
+.edu-hero {
+  position: relative;
+  background: url('assets/edu2.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.edu-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.edu-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.edu-hero .container,
+.edu-hero h1,
+.edu-hero p {
+  color: #fff !important;
+}
+
+
+
+/* contact */
+/* Gradient heading */
+.gradient-text {
+  background: linear-gradient(90deg, #38a169, #319795);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero banner */
+.contact-hero {
+  position: relative;
+  background: url('assets/services.jpg') center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.contact-hero h1 {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+}
+
+/* Form card */
+.contact-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Contact info */
+.contact-info .bi {
+  font-size: 1.5rem;
+  color: #38a169;
+  margin-right: 0.75rem;
+}
+
+/* Shared card style */
+.card-custom {
+  background: #fff;
+  border: none;
+  border-radius: .75rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* Section heading */
+.section-heading {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  color: #1e2a38;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Shared card style */
+.card-custom {
+  background: #fff;
+  border: none;
+  border-radius: .75rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* Section heading */
+.section-heading {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  color: #1e2a38;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+
+
